@@ -11,30 +11,15 @@ Through this project, I gained a solid foundation in using LabVIEW and a better 
  
 
 ## User Interface and Instructions
-1. SQL database snapshots:
-![SQL snapshots](./img/SQL_snapshots.PNG "SQL database snapshots")
-2. UI:
-![User Interface](./img/UI.PNG "User interface")
-3. Operation steps: 
-    * Step1:
-![Step1](./img/step1.PNG "Step1")
-
-    * Step2: 
-![Step2](./img/step2.PNG "Step2")
-
-    * Step3:
-![Step3](./img/step3.PNG "Step3")
-
-    * Step4: 
-![Step4](./img/step4.PNG "Step4")
-
-    * Step5: 
-![Step5](./img/step5.PNG "Step5")
-
-    * Step6: 
-![Step6](./img/step6.PNG "Step6")
-
-    * Step7: 
-![Step7](./img/step7.PNG "Step7")
+1. User Interface:
+![SQL snapshots](./img/UI.PNG "User interface")
+2. Sub-modules:
+![Functional modules](./img/FunctionalModules.PNG "Sub-modules")
+3. Image Analyzer
+![Image analyzer](./img/ImageAnalyzer.PNG "Image analyzer")
+4. Emitter Counter
+![Emitter counter](./img/EmitterCounter.PNG "Emitter counter")
+5. Database
+![Output data](./img/OutputData.PNG "Database connector")
 
  
