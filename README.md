@@ -1,4 +1,4 @@
-# Auto_Life_Test_Data_Collection_System
+# Auto Life Test Data Collection_System
 
 ## Motivation:
 
