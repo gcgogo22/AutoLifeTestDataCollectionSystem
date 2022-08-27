@@ -1,0 +1,434 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x096a118a, pid=6596, tid=7224
+#
+# JRE version: Java(TM) SE Runtime Environment (8.0_31-b13) (build 1.8.0_31-b13)
+# Java VM: Java HotSpot(TM) Client VM (25.31-b07 mixed mode windows-x86 )
+# Problematic frame:
+# C  0x096a118a
+#
+# Failed to write core dump. Minidumps are not enabled by default on client versions of Windows
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x2307cc00):  JavaThread "Thread-618" [_thread_in_native, id=7224, stack(0x00840000,0x00940000)]
+
+siginfo: ExceptionCode=0xc0000005, reading address 0x00000003
+
+Registers:
+EAX=0x096a1160, EBX=0x276b6ac8, ECX=0x2307cd38, EDX=0x276b7c10
+ESP=0x0093f0b8, EBP=0x0093f0f4, ESI=0xffffffff, EDI=0x2307cc00
+EIP=0x096a118a, EFLAGS=0x00210286
+
+Top of Stack: (sp=0x0093f0b8)
+0x0093f0b8:   276b6ac8 2b7cbe43 2307cd38 0093f10c
+0x0093f0c8:   ffffffff ffffffff 3a3ed65c 0093f0d4
+0x0093f0d8:   00000000 0093f10c 276b7c10 00000000
+0x0093f0e8:   276b6ac8 00000000 0093f104 0093f130
+0x0093f0f8:   2b7c4134 00000000 2b7c8819 ffffffff
+0x0093f108:   ffffffff 3a663478 0093f110 276b717a
+0x0093f118:   0093f140 276b7c10 00000000 276b71a8
+0x0093f128:   0093f104 0093f138 0093f164 2b7c4169 
+
+Instructions: (pc=0x096a118a)
+0x096a116a:   8b 7c 24 0c 8b 07 8b 48 18 68 38 31 6a 09 57 ff
+0x096a117a:   d1 8b 17 68 94 31 6a 09 50 8b 42 38 57 ff d0 5f
+0x096a118a:   8b 4e 04 51 e8 fb 0f 00 00 8b 16 52 c7 46 04 00
+0x096a119a:   00 00 00 ff 15 4c 30 6a 09 c7 06 00 00 00 00 c7 
+
+
+Register to memory mapping:
+
+EAX=0x096a1160 is an unknown value
+EBX={method} {0x276b6acc} 'NatUSBCloseDevice' '(J)V' in 'com/oceanoptics/uniusb/UniUSB'
+ECX=0x2307cd38 is an unknown value
+EDX=0x276b7c10 is pointing into metadata
+ESP=0x0093f0b8 is pointing into the stack for thread: 0x2307cc00
+EBP=0x0093f0f4 is pointing into the stack for thread: 0x2307cc00
+ESI=0xffffffff is an unknown value
+EDI=0x2307cc00 is a thread
+
+
+Stack: [0x00840000,0x00940000],  sp=0x0093f0b8,  free space=1020k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  0x096a118a
+j  com.oceanoptics.uniusb.UniUSB.closeDevice(J)V+2
+j  com.oceanoptics.uniusb.USB.closeDevice(J)V+5
+j  com.oceanoptics.omnidriver.features.USBImpl.closeDevice()V+25
+j  com.oceanoptics.omnidriver.spectrometer.USBSpectrometer.closeSpectrometer()V+23
+j  com.oceanoptics.omnidriver.spectrometer.SpectrometerAssembly.closeSpectrometer()V+32
+j  com.oceanoptics.omnidriver.api.wrapper.Wrapper.closeSpectrometer(I)V+11
+j  com.oceanoptics.omnidriver.api.wrapper.Wrapper.closeAllSpectrometers()V+15
+v  ~StubRoutines::call_stub
+C  0x5b0173e5
+C  0x5b0dd57e
+C  0x5b01747e
+C  0x5afa0e67
+C  0x5afa3dfc
+C  0x65efb3ef
+C  [LabVIEW.exe+0x997243]
+C  0x1861e5fd
+C  [LabVIEW.exe+0x1b4d721]
+C  [LabVIEW.exe+0xffdcb]
+C  [LabVIEW.exe+0x1a946fe]
+C  [LabVIEW.exe+0x1aedbd3]
+C  [LabVIEW.exe+0x1a938b2]
+C  [LabVIEW.exe+0xfef92]
+C  [LabVIEW.exe+0xfee65]
+C  [LabVIEW.exe+0xff45e]
+C  [LabVIEW.exe+0x1c44c9b]
+C  [LabVIEW.exe+0xff443]
+C  [KERNEL32.DLL+0x18764]
+C  [ntdll.dll+0x658ed]
+C  [ntdll.dll+0x658bd]
+C  0x00000000
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  com.oceanoptics.uniusb.UniUSB.NatUSBCloseDevice(J)V+0
+j  com.oceanoptics.uniusb.UniUSB.closeDevice(J)V+2
+j  com.oceanoptics.uniusb.USB.closeDevice(J)V+5
+j  com.oceanoptics.omnidriver.features.USBImpl.closeDevice()V+25
+j  com.oceanoptics.omnidriver.spectrometer.USBSpectrometer.closeSpectrometer()V+23
+j  com.oceanoptics.omnidriver.spectrometer.SpectrometerAssembly.closeSpectrometer()V+32
+j  com.oceanoptics.omnidriver.api.wrapper.Wrapper.closeSpectrometer(I)V+11
+j  com.oceanoptics.omnidriver.api.wrapper.Wrapper.closeAllSpectrometers()V+15
+v  ~StubRoutines::call_stub
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+=>0x2307cc00 JavaThread "Thread-618" [_thread_in_native, id=7224, stack(0x00840000,0x00940000)]
+  0x22eda000 JavaThread "Service Thread" daemon [_thread_blocked, id=10824, stack(0x244c0000,0x245c0000)]
+  0x22ed9000 JavaThread "C1 CompilerThread0" daemon [_thread_blocked, id=4844, stack(0x23c40000,0x23d40000)]
+  0x22ed7c00 JavaThread "Attach Listener" daemon [_thread_blocked, id=4408, stack(0x235a0000,0x236a0000)]
+  0x22ed5c00 JavaThread "Signal Dispatcher" daemon [_thread_blocked, id=5064, stack(0x234a0000,0x235a0000)]
+  0x22ea1400 JavaThread "Finalizer" daemon [_thread_blocked, id=11144, stack(0x23090000,0x23190000)]
+  0x22ea0000 JavaThread "Reference Handler" daemon [_thread_blocked, id=16048, stack(0x207f0000,0x208f0000)]
+
+Other Threads:
+  0x22e9d000 VMThread [stack: 0x1ffe0000,0x200e0000] [id=15800]
+  0x22ecf400 WatcherThread [stack: 0x24ec0000,0x24fc0000] [id=10976]
+
+VM state:not at safepoint (normal execution)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+Heap:
+ def new generation   total 4928K, used 2521K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,  52% used [0x3a200000, 0x3a445c28, 0x3a650000)
+  from space 512K,  38% used [0x3a650000, 0x3a680ad0, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+
+Card table byte_map: [0x0b6e0000,0x0b710000] byte_map_base: 0x0b50f000
+
+Polling page: 0x03de0000
+
+CodeCache: size=32768Kb used=1206Kb max_used=1206Kb free=31561Kb
+ bounds [0x2b7c0000, 0x2b8f0000, 0x2d7c0000]
+ total_blobs=440 nmethods=290 adapters=82
+ compilation: enabled
+
+Compilation events (10 events):
+Event: 263.045 Thread 0x22ed9000 nmethod 286 0x2b8e7f08 code [0x2b8e8000, 0x2b8e8090]
+Event: 274.844 Thread 0x22ed9000  287             sun.reflect.DelegatingConstructorAccessorImpl::newInstance (9 bytes)
+Event: 274.845 Thread 0x22ed9000 nmethod 287 0x2b8e80c8 code [0x2b8e81d0, 0x2b8e826c]
+Event: 282.596 Thread 0x22ed9000  288             java.util.Hashtable::addEntry (87 bytes)
+Event: 282.598 Thread 0x22ed9000 nmethod 288 0x2b8e82c8 code [0x2b8e83f0, 0x2b8e8628]
+Event: 292.365 Thread 0x22ed9000  289   !         java.lang.ThreadGroup::remove (94 bytes)
+Event: 292.366 Thread 0x22ed9000 nmethod 289 0x2b8e8848 code [0x2b8e8960, 0x2b8e8c9c]
+Event: 299.314 Thread 0x22ed9000  290             java.util.HashMap::put (13 bytes)
+Event: 299.314 Thread 0x22ed9000 nmethod 290 0x2b8e8ec8 code [0x2b8e8fd0, 0x2b8e90c8]
+Event: 309.450 Thread 0x22ed9000  291   !         com.oceanoptics.omnidriver.api.wrapper.Wrapper::getSpectrum (460 bytes)
+
+GC Heap History (10 events):
+Event: 307.891 GC heap before
+{Heap before GC invocations=159 (full 0):
+ def new generation   total 4928K, used 4523K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K, 100% used [0x3a200000, 0x3a650000, 0x3a650000)
+  from space 512K,  20% used [0x3a6d0000, 0x3a6ead00, 0x3a750000)
+  to   space 512K,   0% used [0x3a650000, 0x3a650000, 0x3a6d0000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+Event: 307.891 GC heap after
+Heap after GC invocations=160 (full 0):
+ def new generation   total 4928K, used 306K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,   0% used [0x3a200000, 0x3a200000, 0x3a650000)
+  from space 512K,  59% used [0x3a650000, 0x3a69c800, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+}
+Event: 308.346 GC heap before
+{Heap before GC invocations=160 (full 0):
+ def new generation   total 4928K, used 4722K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K, 100% used [0x3a200000, 0x3a650000, 0x3a650000)
+  from space 512K,  59% used [0x3a650000, 0x3a69c800, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+Event: 308.347 GC heap after
+Heap after GC invocations=161 (full 0):
+ def new generation   total 4928K, used 123K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,   0% used [0x3a200000, 0x3a200000, 0x3a650000)
+  from space 512K,  24% used [0x3a6d0000, 0x3a6eefb8, 0x3a750000)
+  to   space 512K,   0% used [0x3a650000, 0x3a650000, 0x3a6d0000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+}
+Event: 308.663 GC heap before
+{Heap before GC invocations=161 (full 0):
+ def new generation   total 4928K, used 4539K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K, 100% used [0x3a200000, 0x3a650000, 0x3a650000)
+  from space 512K,  24% used [0x3a6d0000, 0x3a6eefb8, 0x3a750000)
+  to   space 512K,   0% used [0x3a650000, 0x3a650000, 0x3a6d0000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+Event: 308.664 GC heap after
+Heap after GC invocations=162 (full 0):
+ def new generation   total 4928K, used 186K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,   0% used [0x3a200000, 0x3a200000, 0x3a650000)
+  from space 512K,  36% used [0x3a650000, 0x3a67e970, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+}
+Event: 309.102 GC heap before
+{Heap before GC invocations=162 (full 0):
+ def new generation   total 4928K, used 4602K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K, 100% used [0x3a200000, 0x3a650000, 0x3a650000)
+  from space 512K,  36% used [0x3a650000, 0x3a67e970, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+Event: 309.103 GC heap after
+Heap after GC invocations=163 (full 0):
+ def new generation   total 4928K, used 212K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,   0% used [0x3a200000, 0x3a200000, 0x3a650000)
+  from space 512K,  41% used [0x3a6d0000, 0x3a705070, 0x3a750000)
+  to   space 512K,   0% used [0x3a650000, 0x3a650000, 0x3a6d0000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+}
+Event: 309.368 GC heap before
+{Heap before GC invocations=163 (full 0):
+ def new generation   total 4928K, used 4628K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K, 100% used [0x3a200000, 0x3a650000, 0x3a650000)
+  from space 512K,  41% used [0x3a6d0000, 0x3a705070, 0x3a750000)
+  to   space 512K,   0% used [0x3a650000, 0x3a650000, 0x3a6d0000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+Event: 309.369 GC heap after
+Heap after GC invocations=164 (full 0):
+ def new generation   total 4928K, used 194K [0x3a200000, 0x3a750000, 0x3bca0000)
+  eden space 4416K,   0% used [0x3a200000, 0x3a200000, 0x3a650000)
+  from space 512K,  38% used [0x3a650000, 0x3a680ad0, 0x3a6d0000)
+  to   space 512K,   0% used [0x3a6d0000, 0x3a6d0000, 0x3a750000)
+ tenured generation   total 10944K, used 2503K [0x3bca0000, 0x3c750000, 0x3f200000)
+   the space 10944K,  22% used [0x3bca0000, 0x3bf11d70, 0x3bf11e00, 0x3c750000)
+ Metaspace       used 3602K, capacity 3708K, committed 3776K, reserved 4480K
+}
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 309.446 Thread 0x23001400 Exception <a 'java/lang/InterruptedException'> (0x3a3a3c78) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1682]
+Event: 309.447 Thread 0x22ec3800 Exception <a 'java/io/IOException': Bulk failed.> (0x3a3701d0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\prims\jni.cpp, line 742]
+Event: 309.447 Thread 0x2307cc00 Exception <a 'java/lang/IllegalMonitorStateException'> (0x3a38e130) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1816]
+Event: 309.448 Thread 0x22ec2c00 Exception <a 'java/lang/InterruptedException'> (0x3a3b9de0) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\objectMonitor.cpp, line 1682]
+Event: 309.450 Thread 0x22ec2c00 Implicit null exception at 0x2b8bd421 to 0x2b8bd521
+Event: 309.450 Thread 0x22ec2c00 Exception <a 'java/lang/NullPointerException'> (0x3a42f248) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 604]
+Event: 309.450 Thread 0x22ec2c00 Implicit null exception at 0x2b8bde21 to 0x2b8bdf21
+Event: 309.450 Thread 0x22ec2c00 Exception <a 'java/lang/NullPointerException'> (0x3a42f408) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 604]
+Event: 309.450 Thread 0x22ec2c00 Implicit null exception at 0x2b8bde21 to 0x2b8bdf21
+Event: 309.450 Thread 0x22ec2c00 Exception <a 'java/lang/NullPointerException'> (0x3a42f5c8) thrown at [C:\re\workspace\8-2-build-windows-i586-cygwin\jdk8u31\2394\hotspot\src\share\vm\runtime\sharedRuntime.cpp, line 604]
+
+Events (10 events):
+Event: 309.447 Thread 0x2307cc00 Thread exited: 0x2307cc00
+Event: 309.448 Executing VM operation: RevokeBias
+Event: 309.448 Executing VM operation: RevokeBias done
+Event: 309.448 Thread 0x22ec2c00 Thread exited: 0x22ec2c00
+Event: 309.448 Thread 0x2307cc00 Thread added: 0x2307cc00
+Event: 309.448 Thread 0x22ec3800 Thread exited: 0x22ec3800
+Event: 309.449 Thread 0x22ec2c00 Thread added: 0x22ec2c00
+Event: 309.449 Thread 0x22ec2c00 Thread exited: 0x22ec2c00
+Event: 309.449 Thread 0x22ec2c00 Thread added: 0x22ec2c00
+Event: 309.450 Thread 0x22ec2c00 Thread exited: 0x22ec2c00
+
+
+Dynamic libraries:
+0x00980000 - 0x03585000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\LabVIEW.exe
+0x77820000 - 0x779ad000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x744f0000 - 0x745c0000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x76ab0000 - 0x76c72000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x76f30000 - 0x76fa7000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x768b0000 - 0x7696d000 	C:\WINDOWS\System32\msvcrt.dll
+0x751b0000 - 0x751f1000 	C:\WINDOWS\System32\sechost.dll
+0x767f0000 - 0x768b0000 	C:\WINDOWS\System32\RPCRT4.dll
+0x74010000 - 0x74077000 	C:\WINDOWS\SYSTEM32\nierInterface.dll
+0x74480000 - 0x744a0000 	C:\WINDOWS\System32\SspiCli.dll
+0x741f0000 - 0x741f8000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x742f0000 - 0x742fa000 	C:\WINDOWS\System32\CRYPTBASE.dll
+0x77630000 - 0x77697000 	C:\WINDOWS\System32\WS2_32.dll
+0x74820000 - 0x74877000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x75270000 - 0x765b9000 	C:\WINDOWS\System32\SHELL32.dll
+0x74e20000 - 0x74e59000 	C:\WINDOWS\System32\cfgmgr32.dll
+0x745c0000 - 0x746b3000 	C:\WINDOWS\System32\ole32.dll
+0x76640000 - 0x76758000 	C:\WINDOWS\System32\ucrtbase.dll
+0x773f0000 - 0x77627000 	C:\WINDOWS\System32\combase.dll
+0x76760000 - 0x767ec000 	C:\WINDOWS\System32\shcore.dll
+0x76610000 - 0x76631000 	C:\WINDOWS\System32\GDI32.dll
+0x74880000 - 0x74e07000 	C:\WINDOWS\System32\windows.storage.dll
+0x776c0000 - 0x77818000 	C:\WINDOWS\System32\gdi32full.dll
+0x76d10000 - 0x76d55000 	C:\WINDOWS\System32\shlwapi.dll
+0x76e10000 - 0x76e89000 	C:\WINDOWS\System32\msvcp_win.dll
+0x76970000 - 0x76aac000 	C:\WINDOWS\System32\USER32.dll
+0x76fb0000 - 0x76fc6000 	C:\WINDOWS\System32\win32u.dll
+0x776b0000 - 0x776be000 	C:\WINDOWS\System32\kernel.appcore.dll
+0x765c0000 - 0x76605000 	C:\WINDOWS\System32\powrprof.dll
+0x776a0000 - 0x776b0000 	C:\WINDOWS\System32\profapi.dll
+0x76e90000 - 0x76f27000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x746c0000 - 0x747af000 	C:\WINDOWS\System32\COMDLG32.dll
+0x741c0000 - 0x741e4000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x76d60000 - 0x76d79000 	C:\WINDOWS\System32\imagehlp.dll
+0x76d80000 - 0x76da5000 	C:\WINDOWS\System32\IMM32.dll
+0x6e7d0000 - 0x6e9de000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.15063.1779_none_88766d943e223649\COMCTL32.dll
+0x73f80000 - 0x73f88000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x69950000 - 0x699bf000 	C:\WINDOWS\SYSTEM32\WINSPOOL.DRV
+0x74090000 - 0x740fd000 	C:\WINDOWS\SYSTEM32\MSVCP140.dll
+0x74190000 - 0x741b3000 	C:\WINDOWS\SYSTEM32\winmmbase.dll
+0x72d50000 - 0x72d7f000 	C:\WINDOWS\SYSTEM32\IPHLPAPI.DLL
+0x74100000 - 0x74114000 	C:\WINDOWS\SYSTEM32\VCRUNTIME140.dll
+0x679b0000 - 0x67b17000 	C:\WINDOWS\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.15063.1805_none_b95ab96f98ba9883\gdiplus.dll
+0x72b90000 - 0x72ba8000 	C:\WINDOWS\SYSTEM32\bcrypt.dll
+0x628e0000 - 0x62999000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\mgcore_SH_17_0.dll
+0x628b0000 - 0x628d2000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\niCPULib.dll
+0x62770000 - 0x628ab000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\tdcore_17_0.dll
+0x5fb40000 - 0x5fdcd000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\dfir_17_0.dll
+0x69550000 - 0x695c8000 	C:\WINDOWS\system32\uxtheme.dll
+0x75060000 - 0x751a6000 	C:\WINDOWS\System32\MSCTF.dll
+0x74fd0000 - 0x75053000 	C:\WINDOWS\System32\clbcatq.dll
+0x5ef70000 - 0x5f3aa000 	C:\WINDOWS\system32\explorerframe.dll
+0x67800000 - 0x67823000 	C:\WINDOWS\system32\dwmapi.dll
+0x687a0000 - 0x68820000 	C:\Program Files (x86)\National Instruments\Shared\License Manager\NationalInstruments.LicenseManagement.Interop.dll
+0x74280000 - 0x742d5000 	C:\WINDOWS\SYSTEM32\mscoree.dll
+0x73f90000 - 0x7400d000 	C:\Windows\Microsoft.NET\Framework\v4.0.30319\mscoreei.dll
+0x70db0000 - 0x70dc3000 	C:\WINDOWS\SYSTEM32\CRYPTSP.dll
+0x70d30000 - 0x70d5f000 	C:\WINDOWS\system32\rsaenh.dll
+0x73890000 - 0x73f7f000 	C:\Windows\Microsoft.NET\Framework\v4.0.30319\clr.dll
+0x73670000 - 0x73765000 	C:\WINDOWS\SYSTEM32\MSVCR120_CLR0400.dll
+0x71100000 - 0x72496000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\mscorlib\a5a47e8e5e2880adecca43eb928673f1\mscorlib.ni.dll
+0x70cb0000 - 0x70d30000 	C:\Windows\Microsoft.NET\Framework\v4.0.30319\clrjit.dll
+0x70280000 - 0x70c93000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System\48dd3f8f6db349919dcc064962fd8655\System.ni.dll
+0x6f6e0000 - 0x6fec0000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Core\006b49a7ffefe196618154ce3cd8d826\System.Core.ni.dll
+0x68430000 - 0x6879a000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\NationalIns5112fcdb#\a788e0f2931cd7137e0ca493c4d2b2ae\NationalInstruments.LicenseManagement.ni.dll
+0x6c370000 - 0x6c62b000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Runteb92aa12#\7c4f278ccef179111bbbfba42a3a0c1c\System.Runtime.Serialization.ni.dll
+0x6efa0000 - 0x6f6de000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Xml\765ca9f8a762f3043115d02d88b4197f\System.Xml.ni.dll
+0x69d00000 - 0x69d20000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\SMDiagnostics\4bbe54aafad49c9784e4c047e671b844\SMDiagnostics.ni.dll
+0x68360000 - 0x68429000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Servd1dec626#\52c21a6fa2bd17d8fb82d6884a54d056\System.ServiceModel.Internals.ni.dll
+0x6ece0000 - 0x6edd5000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Configuration\4f0b3a61144a3a5b675dc13b86bce26f\System.Configuration.ni.dll
+0x68080000 - 0x68357000 	C:\Program Files (x86)\National Instruments\Shared\License Manager\NationalInstruments.LicenseManagement.Core.dll
+0x74300000 - 0x7447d000 	C:\WINDOWS\System32\CRYPT32.dll
+0x742e0000 - 0x742ee000 	C:\WINDOWS\System32\MSASN1.dll
+0x67f50000 - 0x67fb9000 	C:\WINDOWS\SYSTEM32\MSVCP100.dll
+0x67fc0000 - 0x6807f000 	C:\WINDOWS\SYSTEM32\MSVCR100.dll
+0x744a0000 - 0x744e5000 	C:\WINDOWS\System32\WINTRUST.dll
+0x72d00000 - 0x72d13000 	C:\WINDOWS\SYSTEM32\NETAPI32.dll
+0x73220000 - 0x7329f000 	C:\WINDOWS\SYSTEM32\DNSAPI.dll
+0x75200000 - 0x75207000 	C:\WINDOWS\System32\NSI.dll
+0x729f0000 - 0x72a03000 	C:\WINDOWS\SYSTEM32\dhcpcsvc6.DLL
+0x724a0000 - 0x724b4000 	C:\WINDOWS\SYSTEM32\dhcpcsvc.DLL
+0x70ca0000 - 0x70ca8000 	C:\WINDOWS\SYSTEM32\WINNSI.DLL
+0x74080000 - 0x7408f000 	C:\WINDOWS\SYSTEM32\wtsapi32.dll
+0x67e20000 - 0x67f43000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Management\c98276213fd4de00e925ee4bdd8ed778\System.Management.ni.dll
+0x694f0000 - 0x6950d000 	C:\WINDOWS\system32\wbem\wmiutils.dll
+0x67d80000 - 0x67de8000 	C:\WINDOWS\SYSTEM32\wbemcomn.dll
+0x67df0000 - 0x67e11000 	C:\Windows\Microsoft.NET\Framework\v4.0.30319\wminet_utils.dll
+0x68e70000 - 0x68e80000 	C:\WINDOWS\system32\wbem\wbemsvc.dll
+0x67cc0000 - 0x67d80000 	C:\WINDOWS\system32\wbem\fastprox.dll
+0x69c40000 - 0x69ca3000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Xml.Linq\7c86ce4f1bcf992963462aa272a5a611\System.Xml.Linq.ni.dll
+0x67b20000 - 0x67cb4000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Drawing\c6686398b0f5188857d14659109ca5b3\System.Drawing.ni.dll
+0x67830000 - 0x679a2000 	C:\WINDOWS\SYSTEM32\WindowsCodecs.dll
+0x0b0f0000 - 0x0b0f3000 	C:\WINDOWS\SYSTEM32\icmp.Dll
+0x735d0000 - 0x735e1000 	C:\WINDOWS\system32\napinsp.dll
+0x73490000 - 0x734a6000 	C:\WINDOWS\system32\pnrpnsp.dll
+0x732b0000 - 0x732c3000 	C:\WINDOWS\system32\NLAapi.dll
+0x73600000 - 0x7364e000 	C:\WINDOWS\System32\mswsock.dll
+0x72cd0000 - 0x72cdb000 	C:\WINDOWS\System32\winrnr.dll
+0x72c60000 - 0x72c68000 	C:\Program Files (x86)\National Instruments\Shared\mDNS Responder\nimdnsNSP.dll
+0x72c00000 - 0x72c0d000 	C:\WINDOWS\SYSTEM32\nimdnsResponder.dll
+0x74e10000 - 0x74e16000 	C:\WINDOWS\System32\psapi.dll
+0x5eba0000 - 0x5ef6c000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\NationalIns1a78f6a9#\b11f0e14c28993eda260d1071dc6850b\NationalInstruments.LicenseManagement.UI.ni.dll
+0x68c40000 - 0x68ddc000 	C:\WINDOWS\SYSTEM32\urlmon.dll
+0x68a20000 - 0x68c3e000 	C:\WINDOWS\SYSTEM32\iertutil.dll
+0x689b0000 - 0x68a11000 	C:\WINDOWS\SYSTEM32\msiso.dll
+0x6a3f0000 - 0x6a554000 	C:\WINDOWS\SYSTEM32\PROPSYS.dll
+0x72b70000 - 0x72b78000 	C:\Windows\System32\rasadhlp.dll
+0x6af90000 - 0x6b064000 	C:\WINDOWS\SYSTEM32\rasapi32.dll
+0x6af70000 - 0x6af8d000 	C:\WINDOWS\SYSTEM32\rasman.dll
+0x6c080000 - 0x6c090000 	C:\WINDOWS\SYSTEM32\rtutils.dll
+0x70dd0000 - 0x70e7d000 	C:\WINDOWS\SYSTEM32\winhttp.dll
+0x66270000 - 0x66f8d000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Windows.Forms\5b4a682fc0b76c3ffd097366483e7105\System.Windows.Forms.ni.dll
+0x600c0000 - 0x6018f000 	C:\WINDOWS\assembly\NativeImages_v4.0.30319_32\System.Security\82ab44e4b2493e20e50f4c2a84cd6752\System.Security.ni.dll
+0x6c090000 - 0x6c098000 	C:\WINDOWS\System32\DPAPI.dll
+0x63720000 - 0x63967000 	C:\WINDOWS\SYSTEM32\DWrite.dll
+0x72b20000 - 0x72b6a000 	C:\WINDOWS\System32\fwpuclnt.dll
+0x65ea0000 - 0x65eaf000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\QtManager452_2017.dll
+0x5f8e0000 - 0x5fb32000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\NIQtCore_2017.dll
+0x5e3c0000 - 0x5eb94000 	C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource\NIQtGui_2017.dll
+0x28000000 - 0x28037000 	C:\PROGRA~2\NATION~1\Shared\nicont.dll
+0x747b0000 - 0x7480e000 	C:\WINDOWS\System32\coml2.dll
+0x67740000 - 0x677a7000 	C:\WINDOWS\SYSTEM32\TextInputFramework.dll
+0x676b0000 - 0x6773f000 	C:\WINDOWS\SYSTEM32\CoreMessaging.dll
+0x67480000 - 0x676a7000 	C:\WINDOWS\SYSTEM32\CoreUIComponents.dll
+0x710d0000 - 0x710f8000 	C:\WINDOWS\SYSTEM32\ntmarta.dll
+0x67390000 - 0x67461000 	C:\WINDOWS\SYSTEM32\wintypes.dll
+0x67470000 - 0x67480000 	C:\WINDOWS\SYSTEM32\usermgrcli.dll
+0x5f850000 - 0x5f8d4000 	C:\WINDOWS\SYSTEM32\mscms.dll
+
+VM Arguments:
+jvm_args: -Djava.library.path=C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME -Xmx80m 
+java_command: <unknown>
+java_class_path (initial): C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME/OmniDriver.jar;C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME/SPAM.jar
+Launcher Type: generic
+
+Environment Variables:
+PATH=C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Enterprise Vault\EVClient\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Users\23_lddev\AppData\Local\Microsoft\WindowsApps;;C:\Program Files (x86)\National Instruments\LabVIEW 2017\resource;C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME\..\_jvm\bin;C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME\..\_jvm\bin\client;C:\Program Files (x86)\Ocean Optics\OmniDriverSPAM\OOI_HOME\..\_jvm\bin\server
+USERNAME=23_lddev
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 63 Stepping 2, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows NT 10.0 , 64 bit Build 15063 
+
+CPU:total 12 (6 cores per cpu, 2 threads per core) family 6 model 63 stepping 2, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2
+
+Memory: 4k page, physical 33474656k(26778640k free), swap 38455392k(32670360k free)
+
+vm_info: Java HotSpot(TM) Client VM (25.31-b07) for windows-x86 JRE (1.8.0_31-b13), built on Dec 17 2014 20:46:12 by "java_re" with MS VC++ 10.0 (VS2010)
+
+time: Tue Jun 25 15:57:48 2019
+elapsed time: 310 seconds (0d 0h 5m 10s)
+
